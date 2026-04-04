@@ -27,7 +27,7 @@
         </div>
 		<style>
   			#map {
-    			height: 100vh; /* or a fixed height like 600px */
+    			height: 100vh; 
 		  }
 		</style>
         <script src="js/qgis2web_expressions.js"></script>
@@ -53,6 +53,13 @@
         var map = L.map('map', {
             zoomControl:false, maxZoom:12, minZoom:8
         })
+			
+		L.control.scale({
+    		position: 'bottomleft',  
+    		metric: true,            
+    		imperial: true          
+		}).addTo(map);
+			
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
