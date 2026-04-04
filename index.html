@@ -45,7 +45,26 @@
         <script src="data/Work_7.js"></script>
         <script src="data/Home_8.js"></script>
         <script>
-        var map = L.map('map', {
+        
+		<div id="north-arrow">N</div>
+
+		<style>
+		#north-arrow {
+    		position: absolute;
+    		top: 10px;
+    		left: 10px;
+    		font-size: 24px;
+    		font-weight: bold;
+    		background: white;
+    		padding: 5px 10px;
+    		border: 1px solid black;
+    		z-index: 1000;
+		}
+		</style>
+
+		L.control.scale().addTo(map);
+			
+		var map = L.map('map', {
             zoomControl:false, maxZoom:12, minZoom:8
         })
         var hash = new L.Hash(map);
