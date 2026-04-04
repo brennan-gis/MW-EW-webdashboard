@@ -25,18 +25,6 @@
     <body>
         <div id="map">
         </div>
-		<div id="north-arrow">N</div>
-
-		<style>
-		#north-arrow {
-			position: absolute;
-			bottom: 60px;
-			left: 10px;
-			width: 60px;
-			z-index: 1000;
-		}
-		</style>
-			
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
@@ -61,11 +49,6 @@
 		var map = L.map('map', {
             zoomControl:false, maxZoom:12, minZoom:8
         })
-			
-		L.control.scale({
-    		position: 'bottomright'
-		}).addTo(map);
-			
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
